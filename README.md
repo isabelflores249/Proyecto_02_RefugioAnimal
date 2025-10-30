@@ -1,12 +1,6 @@
 # Proyecto_02_-Tema-
 Colaboración con GitHub donde se estará demostrando el proceso de la realización del Proyecto 02 del curso: Programación para Estadística II.
 
-# Proyecto_02_-Tema-
-Colaboración con GitHub donde se estará demostrando el proceso de la realización del Proyecto 02 del curso: Programación para Estadística II.
-
-Instrucciones:
-
-
 Desarrollo de la Aplicación Shiny en Python
 
 1. La aplicación debe estar desarrollada utilizando Shiny para Python (documentación
