@@ -23,7 +23,7 @@ app_ui = ui.page_navbar(
     ui.nav_spacer(),  # Empuja los paneles hacia la derecha
     ui.nav_panel("Análisis", page1),
     ui.nav_panel("Acerca de", "Aplicación Shiny con datos del refugio de animales."),
-    title="Refugio de Animales 🐶🐱"
+    title="Refugio de Animales"
 )
 
 # ---- 4. Servidor ----
