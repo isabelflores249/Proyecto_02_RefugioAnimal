@@ -76,7 +76,7 @@ app_ui = ui.page_navbar(
     ui.nav_panel(
         "About",
         ui.markdown("""
-        ### 🐶 Dashboard de Datos
+        ###  Dashboard de Datos
         Panel interactivo para visualizar:
         - Qué tipo de animales ingresan con mayor frecuencia.
         - La distribución de edades según tipo de animal.
