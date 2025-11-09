@@ -1,18 +1,15 @@
 
-from shiny import App, render, ui, reactive
+from shiny import App, render, ui
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-# --- 2. Cargar y preparar los datos ---
 df = pd.read_csv(r"C:\Users\ESTUDIANTE\Downloads\wter-evkm_version_57907.csv")
 
-# Normalizar nombres de columnas y valores básicos
 df.columns = df.columns.str.lower()
 df["animal_type"] = df["animal_type"].fillna("Desconocido")
 
-# Convertir edad en años (si existe la columna "age_upon_intake")
 def convertir_edad(valor):
     if isinstance(valor, str):
         partes = valor.lower().split()
@@ -33,23 +30,20 @@ def convertir_edad(valor):
 
 df["age_years"] = df["age_upon_intake"].apply(convertir_edad)
 
-# Crear columna de esterilización
 df["sterilized"] = df["sex_upon_intake"].apply(
     lambda x: "Esterilizado" if isinstance(x, str) and ("spayed" in x.lower() or "neutered" in x.lower())
     else "No esterilizado"
 )
 
-# Calcular máximo de edad para el slider (manejo cuando no hay datos)
-age_series = df["age_years"].dropna()
-max_age = int(age_series.max()) if not age_series.empty else 1
+max_age = int(df["age_years"].dropna().max()) if df["age_years"].notna().any() else 1
 
-# --- 3. Interfaz (UI) ---
+
 app_ui = ui.page_navbar(
     ui.nav_panel(
-        "Dashboard",
+        "Gráficos",
         ui.layout_sidebar(
             ui.sidebar(
-                ui.h3("Filtros 🐾"),
+                ui.h3("Filtros"),
                 ui.input_select(
                     "animal",
                     "Selecciona tipo de animal:",
@@ -74,10 +68,10 @@ app_ui = ui.page_navbar(
         )
     ),
     ui.nav_panel(
-        "About",
+        "descripción",
         ui.markdown("""
-        ###  Dashboard de Datos
-        Panel interactivo para visualizar:
+        ### Dashboard de Datos
+        Este panel muestra:
         - Qué tipo de animales ingresan con mayor frecuencia.
         - La distribución de edades según tipo de animal.
         - Proporción de animales esterilizados vs no esterilizados.
@@ -86,47 +80,43 @@ app_ui = ui.page_navbar(
     title="Refugio de Animales"
 )
 
-# --- 4. Servidor ---
-def server(input, output, session):
-    @reactive.Calc
-    def data_filtrada():
-        d = df.copy()
-        # Filtrar por tipo de animal
-        if input.animal() != "Todos":
-            d = d[d["animal_type"] == input.animal()]
-        # Filtrar por rango de edad (si hay age_years)
-        d = d[(d["age_years"].notna()) & (d["age_years"] >= input.edad()[0]) & (d["age_years"] <= input.edad()[1])]
-        return d
 
+def server(input, output, session):
     @output
     @render.plot
     def plot():
-        d = data_filtrada()
-        fig, ax = plt.subplots(figsize=(8, 5))
+       
+        d = df.copy()
+
+       
+        if input.animal() != "Todos":
+            d = d[d["animal_type"] == input.animal()]
+
+        d = d[(d["age_years"].notna()) & (d["age_years"] >= input.edad()[0]) & (d["age_years"] <= input.edad()[1])]
+
+        plt.figure(figsize=(8, 5))
         tipo = input.grafico()
 
         if tipo == "Tipo de Animal":
-            sns.countplot(data=d, x="animal_type", palette="Set2", ax=ax)
-            ax.set_title("Frecuencia de animales ingresados")
-            ax.set_xlabel("Tipo de animal")
-            ax.set_ylabel("Cantidad")
+            sns.countplot(data=d, x="animal_type", palette="Set2")
+            plt.title("Frecuencia de animales ingresados")
+            plt.xlabel("Tipo de animal")
+            plt.ylabel("Cantidad")
 
         elif tipo == "Edad por Tipo":
-            sns.boxplot(data=d, x="animal_type", y="age_years", palette="Set3", ax=ax)
-            ax.set_title("Distribución de edades por tipo de animal")
-            ax.set_xlabel("Tipo de animal")
-            ax.set_ylabel("Edad (años)")
+            sns.boxplot(data=d, x="animal_type", y="age_years", palette="Set3")
+            plt.title("Distribución de edades por tipo de animal")
+            plt.xlabel("Tipo de animal")
+            plt.ylabel("Edad (años)")
 
         elif tipo == "Esterilización":
-            # Usar conteos por esterilización (y opcional hue por animal_type)
-            sns.countplot(data=d, x="sterilized", hue="animal_type", palette="Set1", ax=ax)
-            ax.set_title("Esterilización: conteo por especie")
-            ax.set_xlabel("Esterilización")
-            ax.set_ylabel("Cantidad")
-            ax.legend(title="Tipo")
+            sns.countplot(data=d, x="sterilized", hue="animal_type", palette="Set1")
+            plt.title("Esterilización por especie")
+            plt.xlabel("Esterilización")
+            plt.ylabel("Cantidad")
 
-        fig.tight_layout()
-        return fig
+        plt.tight_layout()
+        return plt.gcf()
 
     @output
     @render.text
@@ -135,13 +125,11 @@ def server(input, output, session):
         if tipo == "Tipo de Animal":
             return "Muestra los tipos de animales que ingresan con mayor frecuencia al centro."
         elif tipo == "Edad por Tipo":
-            return "Visualiza cómo varía la edad de los animales según su tipo."
+            return "Visualiza cómo varía la edad según el tipo de animal."
         elif tipo == "Esterilización":
-            return "Compara la proporción de animales esterilizados y no esterilizados por especie."
+            return "Compara animales esterilizados y no esterilizados."
         else:
             return "Selecciona un gráfico para ver los resultados."
 
-# --- 5. Crear la app ---
+
 app = App(app_ui, server)
-
-
