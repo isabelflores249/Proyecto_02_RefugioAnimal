@@ -1,3 +1,5 @@
+# Proyecto_02_-Tema-
+
 Introduccion:
 
 El presente proyecto tiene como objetivo que los estudiantes desarrollen una aplicación
@@ -39,7 +41,11 @@ Selección y Análisis del Conjunto de Datos
 4. Explicación y justificación:
 5. Se debe explicar por qué se eligió ese conjunto de datos: relevancia, interés
 académico o social, potencial para el análisis.
-6. Sobre el Dataset:
+
+Se escogió el dataset de “Austin Animal Center Intakes” porque contiene información real y actualizada sobre los animales que ingresan al refugio de la ciudad de Austin, Texas. Este conjunto de datos es de interetés ya que permite analizar patrones de ingreso de animales, sus condiciones de llegada, tipos, edades, sexo y raza y es información valiosa para un estudio desde el punto de vista social. Estadísticamente este dataset contiene variables categóricas y cuantitativas con las cuales se pueden realizar gráficos y distintos tipos de visualizaciones para la aplicación shiny. 
+
+
+7. Sobre el Dataset:
 
 *Context*
 I was reading Every Nose Counts: Using Metrics in Animal Shelters when I got inspired to conduct an EDA on animal shelter data. I looked online for data and found this dataset which is curated by Austin Animal Center (https://www.austintexas.gov/austin-animal-center). The data can be found on https://data.austintexas.gov.
@@ -58,8 +64,16 @@ Austin_Animal_Center_Stray_Map.csv
 Thank you Austin Animal Center for all the animal protection you provide to stray & owned animals. Also, thank you for making your data accessible to the public.
 
 7. Definición de objetivos y preguntas:
-8. Presentar los objetivos concretos del análisis.
-9. Formular al menos tres preguntas que vuestra aplicación ayudará a responder.
+   Objetivos:
+   
+
+   Preguntas:
+-¿Qué tipo de animales ingresan con mayor frecuencia al centro?
+-Distribución de edades según tipo de animal.
+-Proporción de machos/hembras
+
+9. Presentar los objetivos concretos del análisis.
+10. Formular al menos tres preguntas que vuestra aplicación ayudará a responder.
 
 Presentación del Análisis
 1. La aplicación debe incluir una sección de descripción del conjunto de datos y su
