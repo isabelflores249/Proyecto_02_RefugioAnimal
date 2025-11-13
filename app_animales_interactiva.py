@@ -9,7 +9,7 @@ from shiny import App, ui, render, reactive
 # Interfaz (ui)
 
 app_ui = ui.page_fluid(
-    ui.h2("Desarrollo de la Aplicación Shiny en Python"), #Aqui estamos haciendo que lea el archivo csv que deseamos que lea.
+    ui.h2("Desarrollo de la Aplicación Shiny en Python"), #titulo de la aplicacion 
 
     ui.help_text(
         "Descripcion: Suba un archivo (.csv) y elija el tipo de gráfico que quiere visualizar."
@@ -40,7 +40,7 @@ app_ui = ui.page_fluid(
 def server(input, output, session):
 
 
-    @reactive.Calc #Queremos que el reactivo lea el .csv
+    @reactive.calc #Queremos que el reactivo lea el .csv
     def df():
         file = input.file1()
         if file is None:
@@ -52,7 +52,7 @@ def server(input, output, session):
             return None
 
     
-    @reactive.effect
+    @reactive.Effect
     @reactive.event(input.file1) # El efecto en este caso debe ser actualizar opciones de variables para cuando carguemos el .csv
     def actualizar_selectores():
         data = df()
@@ -92,7 +92,7 @@ def server(input, output, session):
                 plt.xticks(rotation=45, ha="right")
 
 #2. Grafico de barras comparativas
-            elif tipo == "Grafico de barras comparativas" and var1 and var2 and var2 != "(ninguna)":
+            elif tipo == "Gráfico de barras comparativas" and var1 and var2 and var2 != "(ninguna)":
                 tabla = pd.crosstab(data[var1], data[var2])
                 tabla.plot(kind="bar", ax=ax, stacked=False, edgecolor="black")
                 ax.set_title(f"{var1} vs {var2}")
