@@ -1,12 +1,19 @@
 Proyecto_02_RefugioAnimal
 
+
 Introduccion:
 
 El presente proyecto tiene como objetivo que los estudiantes desarrollen una aplicación interactiva utilizando Shiny en Python, trabajen de forma colaborativa en grupos establecidos y empleen buenas prácticas de colaboración mediante el uso de Git. Además, deberán seleccionar y analizar un conjunto de datos relevante, justificar su elección y presentar los resultados a través de la aplicación. La colaboración efectiva y la documentación clara serán aspectos fundamentales para la evaluación final.
 
+
 Participantes:
 
-Isabel Flores Rodriguez C32973 Keylor Gomez Jimenez C232380 Estefania Nuñez Jimenez C4H993
+Isabel Flores Rodríguez C32973
+
+Keylor Gómez Jiménez C232380
+
+Estefanía Núñez Jiménez C4H993
+
 
 Desarrollo de la Aplicación Shiny en Python
 
@@ -49,25 +56,33 @@ Thank you Austin Animal Center for all the animal protection you provide to stra
 
 Definición de objetivos y preguntas: 
 
-Objetivos:
 
--Identificar los tipos de animales que ingresan con mayor frecuencia al refugio.
+Objetivo 1: Identificar la distribución de las edades de los animales en relación con el índice de registro.
 
--Analizar la distribución de edades según el tipo de animal
+Pregunta 1: ¿Cómo se distribuyen las edades de los animales en función del índice de registro?
 
--Determinar la proporción de machos y hembras en los registros del refugio
+Grafico: Dispersion
 
--Encontrar la ubicacion donde son hallados con mayor frecuencia los animales.
 
-Preguntas:
+Objetivo 2: Determinar qué tipo de animal ingresa con mayor frecuencia al centro.
 
--¿Qué tipo de animales ingresan con mayor frecuencia al centro? 
+Pregunta 2: ¿Qué tipo de animal ingresa más?
 
--¿Cual es la distribución de edades según tipo de animal? 
+Grafico: Histograma
 
--Proporción de machos/hembras
 
--¿Donde son encontrados la mayoria de los animales?
+Objetivo 3: Encontrar el color que predomina sobre todos los animales del refugio.
+
+Pregunta 3: ¿Qué color predomina en los animales?
+
+Grafico: Pie
+
+
+Objetivo 4: Reconocer el color que predomina sobre todos los animales del refugio.
+
+Pregunta 4: ¿Cuál es la edad que predomina entre los animales al momento que los refugian?
+
+Grafico: Diagrama de caja 
 
 Presentación del Análisis
 
@@ -102,6 +117,10 @@ Evidencia del uso de Git (capturas o enlaces).
 Plazos:
 La fecha límite de entrega será comunicada por el docente y respetará el formato 23/11/2025. 11.Criterios de evaluación:
 Descripción del proyecto:
+
+
+El informe puede ser accedido igualmente mediante el siguiente enlance: https://docs.google.com/document/d/1g1GkrBCVKcJCNFncS1JUe5SO4SKsUxV4XC4eIaKN2e8/edit?usp=sharing
+
 
 <img width="796" height="426" alt="image" src="https://github.com/user-attachments/assets/0d6eca4e-c6b1-4a7d-ae21-f5e90f22001a" />
 <img width="799" height="420" alt="image" src="https://github.com/user-attachments/assets/16cf6be8-ae90-4327-b704-98a15879ac40" />
