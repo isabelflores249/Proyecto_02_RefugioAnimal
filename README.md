@@ -1,10 +1,7 @@
 Proyecto_02_RefugioAnimal
 
 
-Introduccion:
-
-El presente proyecto tiene como objetivo que los estudiantes desarrollen una aplicación interactiva utilizando Shiny en Python, trabajen de forma colaborativa en grupos establecidos y empleen buenas prácticas de colaboración mediante el uso de Git. Además, deberán seleccionar y analizar un conjunto de datos relevante, justificar su elección y presentar los resultados a través de la aplicación. La colaboración efectiva y la documentación clara serán aspectos fundamentales para la evaluación final.
-
+La visualización mediante una aplicación interactiva utilizando Shiny en Python y el análisis de ciertos aspectos en la base de datos seleccionada se desarrolló entre los tres participantes de este grupo de trabajo. Para llevarlo a cabo, se requirió del aporte equitativo, y comunicación clara por parte de cada uno de los participantes, para completarlo de manera favorable. Las tareas realizadas en conjunto fueron la selección del dataset a utilizar y el desarrollo del código de la app de Shiny para Python, la presentación y el informe La visualización mediante una aplicación interactiva utilizando Shiny en Python y el análisis de ciertos aspectos en la base de datos seleccionada se desarrolló entre los tres participantes de este grupo de trabajo. Para llevarlo a cabo, se requirió del aporte equitativo, y comunicación clara por parte de cada uno de los participantes, para completarlo de manera favorable. Las tareas realizadas en conjunto fueron la selección del dataset a utilizar y el desarrollo del código de la app de Shiny para Python, la presentación y el informe.
 
 Participantes:
 
@@ -23,39 +20,53 @@ Debe permitir la visualización y análisis interactivo del conjunto de datos se
 Requisitos técnicos mínimos:
 
 Interfaz gráfica intuitiva y funcional.
-Al menos tres tipos de visualizaciones (por ejemplo, gráficos de barras y mapas de calor).
+Cuatro tipos de visualizaciones:
+*Grafico de Dispersion
+
+*Histograma
+
+*Diagrama de caja
+
+*Grafico de Pie
 Opciones para filtrar o modificar los datos visualizados según parámetros definidos por el usuario.
-Código bien estructurado, comentado y siguiendo buenas prácticas de programación.
+
+
 Selección y Análisis del Conjunto de Datos
 
 Del dataset (zip): Animal Shelter Analytics, se estara utilizando la base de datos (.csv): Austin_Animal_Center_Intakes.csv (https://www.kaggle.com/datasets/jackdaoud/animal-shelter-analytics?select=Austin_Animal_Center_Intakes.csv)
-El conjunto de datos es publico ya que fue recuperado del sitio web "Kaggle".
-Posee 124121 registros, sus variables son: "Animal ID", "DateTime", "MonthYear", y "Age upon Intake", variables categoricas: "Name", "Found Location", "Intake Type", "Intake Condition", "Animal Type", "Sex upon Intake", "Breed", "Color"
 
-Explicación y justificación:
+El autor, Jack Daoud, explicó el contexto de la base de datos que él se inspiró de conducir un EDA en los datos del refugio de animales, sacó los datos del portal público de la ciudad de Austin, Texas en el segmento del servicio de animales, el contenido del dataset contiene tres CSVs:
 
-Se escogió el dataset de “Austin Animal Center Intakes” porque contiene información real y actualizada (la ultima actualizacion fue hace 5 años) sobre los animales que ingresan al refugio de la ciudad de Austin, Texas. Este conjunto de datos es de interés ya que permite analizar patrones de ingreso de animales, sus condiciones de llegada, tipos, edades, sexo y raza. Como el dataset contiene variables categoricas y numericas, su analisis abarca mayor diversidad en el ambito estadistico.
+-Austin_Animal_Center_Intakes.csv 
+-Austin_Animal_Center_Outcomes.csv 
+-Austin_Animal_Center_Stray_Map.csv
+
+Los ingresos son del Centro de Animales desde el 1 de octubre de 2013 hasta la fecha de publicación de los datos. Es reflejado el estado de los animales al llegar al centro, todos los animales reciben un identificador único al ingresar. Anualmente, más del 90 % de los animales que ingresan al centro son adoptados, transferidos a refugios o devueltos a sus dueños.
 
 Sobre el Dataset:
 
-El texto a continuacion fue recuperado desde la pagina de Kaggle, donde el autor del Dataset explico su contexto de la base de datos:
+-El conjunto de datos es de dominio público 
+-Posee 124121 registros, sus variables son: "Animal ID", "DateTime", "MonthYear", y "Age upon Intake", variables categoricas: "Name", "Found Location", "Intake Type", "Intake Condition", "Animal Type", "Sex upon Intake", "Breed", "Color"
+-Para la utilizacion satisfactoria de la aplicacion de visualizacion de Shiny para Python que desarrollamos modificamos el dataset, reduciendo los registros a 501, igualmente agrupando/generalizando las variables de Color,Breed_Group,Sex upon Intake,Intake Type,Location_Group. Otra de las modificaciones hechas a las variables fue convertir la variable de "Age_Days" a una variable estrictamente numérica, anteriormente describe la edad de los animales en semanas (ej: 1 week, 2 weeks, ..), lo modificamos para que en los registros ahora se muestra el número de la edad en días. 
 
+
+Explicación y justificación:
+
+Se escogió el dataset de “Austin Animal Center Intakes” porque contiene información real y actualizada (la última actualización fue hace 5 años) sobre los animales que ingresan al refugio de la ciudad de Austin, Texas. Este conjunto de datos es de interés ya que permite analizar patrones de ingreso de animales, sus condiciones de llegada, tipos, edades, sexo y raza. Como el dataset contiene variables categóricas y numéricas, su análisis abarca mayor diversidad en el ámbito estadístico.
+
+(Contexto directo del autor, recuperado de la página de Kaggle)
 Context:
 
 I was reading Every Nose Counts: Using Metrics in Animal Shelters when I got inspired to conduct an EDA on animal shelter data. I looked online for data and found this dataset which is curated by Austin Animal Center (https://www.austintexas.gov/austin-animal-center). The data can be found on https://data.austintexas.gov.
 
 This data can be utilized for EDA practice. So go ahead and help animal shelters with your EDA powers by completing this task!
 
-Content The data set contains three CSVs:
-
-Austin_Animal_Center_Intakes.csv Austin_Animal_Center_Outcomes.csv Austin_Animal_Center_Stray_Map.csv
-
 Acknowledgement
 
 Thank you Austin Animal Center for all the animal protection you provide to stray & owned animals. Also, thank you for making your data accessible to the public.
 
-Definición de objetivos y preguntas: 
 
+Definición de objetivos y preguntas: 
 
 Objetivo 1: Identificar la distribución de las edades de los animales en relación con el índice de registro.
 
@@ -82,11 +93,11 @@ Objetivo 4: Reconocer el color que predomina sobre todos los animales del refugi
 
 Pregunta 4: ¿Cuál es la edad que predomina entre los animales al momento que los refugian?
 
-Grafico: Diagrama de caja 
+Gráfico: Diagrama de caja 
 
 Presentación del Análisis
 
-La presentacion igualmente se puede visualizar en el siguiente enlance adjunto a continuacion: [ https://www.canva.com/design/DAG3sc1IhtU/EfIsOgtpYZ5qFFRkfb8SgQ/edit](https://www.canva.com/design/DAG3sc1IhtU/EfIsOgtpYZ5qFFRkfb8SgQ/edit?utm_content=DAG3sc1IhtU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+La presentacion igualmente se puede visualizar en el enlance adjunto a continuacion: [ https://www.canva.com/design/DAG3sc1IhtU/EfIsOgtpYZ5qFFRkfb8SgQ/edit](https://www.canva.com/design/DAG3sc1IhtU/EfIsOgtpYZ5qFFRkfb8SgQ/edit?utm_content=DAG3sc1IhtU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 Colaboración con Git:
 
