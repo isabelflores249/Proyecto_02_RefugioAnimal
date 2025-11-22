@@ -21,6 +21,7 @@ Requisitos técnicos mínimos:
 
 Interfaz gráfica intuitiva y funcional.
 Cuatro tipos de visualizaciones:
+
 *Grafico de Dispersion
 
 *Histograma
@@ -28,6 +29,7 @@ Cuatro tipos de visualizaciones:
 *Diagrama de caja
 
 *Grafico de Pie
+
 Opciones para filtrar o modificar los datos visualizados según parámetros definidos por el usuario.
 
 
