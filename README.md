@@ -1,7 +1,16 @@
 Proyecto_02_RefugioAnimal
 
+El desarrollo de la visualización mediante una aplicación interactiva utilizando Shiny en Python sobre el análisis de ciertos aspectos en la base de datos seleccionada se realizó entre los tres participantes del grupo de trabajo, se requirió del aporte equitativo y de comunicación clara por parte de cada uno de estos. Las tareas realizadas en conjunto fueron la selección del dataset, y el desarrollo del código de la app de Shiny para Python, la presentación y el informe, aun así, a continuación se describen algunas de las tareas individuales:
 
-La visualización mediante una aplicación interactiva utilizando Shiny en Python y el análisis de ciertos aspectos en la base de datos seleccionada se desarrolló entre los tres participantes de este grupo de trabajo. Para llevarlo a cabo, se requirió del aporte equitativo, y comunicación clara por parte de cada uno de los participantes, para completarlo de manera favorable. Las tareas realizadas en conjunto fueron la selección del dataset a utilizar y el desarrollo del código de la app de Shiny para Python, la presentación y el informe La visualización mediante una aplicación interactiva utilizando Shiny en Python y el análisis de ciertos aspectos en la base de datos seleccionada se desarrolló entre los tres participantes de este grupo de trabajo. Para llevarlo a cabo, se requirió del aporte equitativo, y comunicación clara por parte de cada uno de los participantes, para completarlo de manera favorable. Las tareas realizadas en conjunto fueron la selección del dataset a utilizar y el desarrollo del código de la app de Shiny para Python, la presentación y el informe.
+
+Isabel Flores: Creación del Github, presentación e informe. Mantenimiento de la consistencia en los aportes de manera equitativa. 
+
+
+Keylor Gómez: Aporte considerable en la programación de la aplicación de Shiny para Python y la interpretación de las visualizaciones.
+
+
+Estefanía Núñez: Constitución de los objetivos, preguntas y conclusiones. 
+
 
 Participantes:
 
@@ -37,13 +46,18 @@ Selección y Análisis del Conjunto de Datos
 
 Del dataset (zip): Animal Shelter Analytics, se estara utilizando la base de datos (.csv): Austin_Animal_Center_Intakes.csv (https://www.kaggle.com/datasets/jackdaoud/animal-shelter-analytics?select=Austin_Animal_Center_Intakes.csv)
 
-El autor, Jack Daoud, explicó el contexto de la base de datos que él se inspiró de conducir un EDA en los datos del refugio de animales, sacó los datos del portal público de la ciudad de Austin, Texas en el segmento del servicio de animales, el contenido del dataset contiene tres CSVs:
+El CSV utilizado fue recuperado desde la página de Kaggle, donde el autor, Jack Daoud, explicó que él se inspiró de conducir un EDA en los datos de un refugio de animales, el recuperó los datos del portal público de la ciudad de Austin, Texas en el segmento de servicio de animales. El contenido del dataset contiene tres CSVs:
 
--Austin_Animal_Center_Intakes.csv 
--Austin_Animal_Center_Outcomes.csv 
--Austin_Animal_Center_Stray_Map.csv
 
-Los ingresos son del Centro de Animales desde el 1 de octubre de 2013 hasta la fecha de publicación de los datos. Es reflejado el estado de los animales al llegar al centro, todos los animales reciben un identificador único al ingresar. Anualmente, más del 90 % de los animales que ingresan al centro son adoptados, transferidos a refugios o devueltos a sus dueños.
+Austin_Animal_Center_Intakes.csv 
+
+Austin_Animal_Center_Outcomes.csv 
+
+Austin_Animal_Center_Stray_Map.csv
+
+
+Igualmente, en la página del Dataset, Daud explicó que los ingresos del Centro de Animales fueron registrados desde el 1 de octubre de 2013 hasta la fecha de publicación. En estos es reflejado el estado de los animales, todos los animales reciben un identificador único al ingresar. Anualmente, más del 90 % de los animales que ingresan al centro son adoptados, transferidos a refugios o devueltos a sus dueños. 
+
 
 Sobre el Dataset:
 
@@ -54,7 +68,8 @@ Sobre el Dataset:
 
 Explicación y justificación:
 
-Se escogió el dataset de “Austin Animal Center Intakes” porque contiene información real y actualizada (la última actualización fue hace 5 años) sobre los animales que ingresan al refugio de la ciudad de Austin, Texas. Este conjunto de datos es de interés ya que permite analizar patrones de ingreso de animales, sus condiciones de llegada, tipos, edades, sexo y raza. Como el dataset contiene variables categóricas y numéricas, su análisis abarca mayor diversidad en el ámbito estadístico.
+La base de datos “Austin Animal Center Intakes” en especifico es de interés para el desarrollo de la aplicacion de Shiny para python ya que permite analizar patrones de ingreso de los animales, contiene variables como: sus condiciones de llegada, edad, sexo y raza. Al contener variables categóricas y numéricas el análisis del csv permite abarcar más observaciones en el ámbito estadístico.
+
 
 (Contexto directo del autor, recuperado de la página de Kaggle)
 Context:
@@ -84,20 +99,22 @@ Pregunta 2: ¿Qué tipo de animal ingresa más?
 Grafico: Histograma
 
 
-Objetivo 3: Encontrar el color que predomina sobre todos los animales del refugio.
+Objetivo 3: Reconocer el color que predomina sobre todos los animales del refugio.
 
-Pregunta 3: ¿Qué color predomina en los animales?
+Pregunta 3: ¿Cuál es la edad que predomina entre los animales al momento que los refugian?
+
+Gráfico: Diagrama de caja 
+
+
+Objetivo 4: Encontrar el color que predomina sobre todos los animales del refugio.
+
+Pregunta 4: ¿Qué color predomina en los animales?
 
 Grafico: Pie
 
 
-Objetivo 4: Reconocer el color que predomina sobre todos los animales del refugio.
-
-Pregunta 4: ¿Cuál es la edad que predomina entre los animales al momento que los refugian?
-
-Gráfico: Diagrama de caja 
-
 Presentación del Análisis
+
 
 La presentacion igualmente se puede visualizar en el enlance adjunto a continuacion: [ https://www.canva.com/design/DAG3sc1IhtU/EfIsOgtpYZ5qFFRkfb8SgQ/edit](https://www.canva.com/design/DAG3sc1IhtU/EfIsOgtpYZ5qFFRkfb8SgQ/edit?utm_content=DAG3sc1IhtU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
